@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 
 // components
 import Footer from "./components/Footer/Footer";
@@ -8,7 +8,10 @@ function App() {
   return (
     <>
       <Header />
-      <h1>Typescript</h1>
+      <main className={styles.main}>
+        <h1>Typescript</h1>
+      </main>
+
       <Footer />
     </>
   );

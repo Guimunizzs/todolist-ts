@@ -1,4 +1,3 @@
-import styles from "./TaskForm.module.css";
 import { useState, useEffect } from "react";
 
 // interfaces
@@ -38,28 +37,41 @@ function TaskForm({ btnText, taskList, setTaskList }: Props) {
     }
   };
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <div className={styles.input_container}>
-        <label htmlFor="title">Titulo</label>
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col items-center gap-4 p-8 bg-gray-100 rounded shadow-md"
+    >
+      <div className="flex flex-col w-80">
+        <label htmlFor="title" className="font-bold">
+          Titulo
+        </label>
         <input
           type="text"
           name="title"
           placeholder="Titutlo da terefa"
           onChange={handleChange}
           value={title}
+          className="mb-2 border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
       </div>
-      <div className={styles.input_container}>
-        <label htmlFor="difficulty">Dificuldade:</label>
+      <div className="flex flex-col w-80">
+        <label htmlFor="difficulty" className="font-bold">
+          Dificuldade:
+        </label>
         <input
           type="text"
           name="difficulty"
           placeholder="Dificuldade da terefa"
           onChange={handleChange}
           value={difficulty}
+          className="mb-2 border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
       </div>
-      <input type="submit" value={btnText} />
+      <input
+        type="submit"
+        className="bg-blue-700 max-w-screen px-4 py-2 rounded border border-blue-700 text-white font-bold hover:bg-blue-800 transition-colors duration-300 cursor-pointer"
+        value={btnText}
+      />
     </form>
   );
 }

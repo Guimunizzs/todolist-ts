@@ -1,10 +1,8 @@
-import styles from "./Footer.module.css";
-
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className="flex justify-center items-center h-24 mt-4 bg-gray-800 text-white">
       <p>
-        <span>React + TS To-do</span> @ 2025
+        <span className="font-bold text-blue-100">React + TS To-do</span> @ 2025
       </p>
     </footer>
   );

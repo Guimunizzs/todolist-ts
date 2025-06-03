@@ -11,14 +11,49 @@ import type { ITask } from "./interfaces/Types";
 
 function App() {
   const [taskList, setTaskList] = useState<ITask[]>([]);
+  const [taskUpdate, setTaskUpdate] = useState<ITask | null>(null);
 
   const deleteTask = (id: number) => {
     setTaskList((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
+
+  const hiderOrShowModal = (display: boolean) => {
+    const modal = document.querySelector("#modal");
+    if (display) {
+      modal!.classList.remove("hidden");
+    } else {
+      modal!.classList.add("hidden");
+    }
+  };
+
+  const editTask = (task: ITask): void => {
+    hiderOrShowModal(true);
+    setTaskUpdate(task);
+  };
+
+  const updateTask = (id: number, title: string, difficulty: number) => {
+    const updatedTask: ITask = { id, title, difficulty };
+
+    const updatedItems = taskList.map((task) => {
+      return task.id === updatedTask.id ? updatedTask : task;
+    });
+
+    setTaskList(updatedItems);
+
+    hiderOrShowModal(false);
+  };
+
   return (
     <>
       <Modal
-        children={<TaskForm btnText="Editar Tarefa" taskList={taskList} />}
+        children={
+          <TaskForm
+            btnText="Editar Tarefa"
+            taskList={taskList}
+            task={taskUpdate}
+            handleUpdate={updateTask}
+          />
+        }
       />
       <Header />
       <main className="flex flex-col items-center justify-center  ">
@@ -34,7 +69,11 @@ function App() {
         <div className="flex flex-col items-center justify-center gap-4 p-8 bg-white rounded shadow-md mt-8">
           <h1 className="text-2xl font-bold mb-4">Lista de Tarefas</h1>
           <h2>Suas tarefas:</h2>
-          <TaskList taskList={taskList} handleDeleteTask={deleteTask} />
+          <TaskList
+            taskList={taskList}
+            handleDeleteTask={deleteTask}
+            handleEdit={editTask}
+          />
         </div>
       </main>
       <Footer />

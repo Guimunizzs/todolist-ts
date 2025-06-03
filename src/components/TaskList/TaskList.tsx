@@ -4,9 +4,10 @@ import type { ITask } from "../../interfaces/Types";
 interface Props {
   taskList: ITask[];
   handleDeleteTask?: (id: number) => void;
+  handleEdit: (task: ITask) => void;
 }
 
-const TaskList = ({ taskList, handleDeleteTask }: Props) => {
+const TaskList = ({ taskList, handleDeleteTask, handleEdit }: Props) => {
   return (
     <>
       {taskList.length > 0 ? (
@@ -20,7 +21,10 @@ const TaskList = ({ taskList, handleDeleteTask }: Props) => {
               <p className="text-sm">Dificuldade: {task.difficulty}</p>
             </div>
             <div className="flex gap-2">
-              <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+              <button
+                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                onClick={() => handleEdit && handleEdit(task)}
+              >
                 Editar
               </button>
               <button

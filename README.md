@@ -1,54 +1,78 @@
-# React + TypeScript + Vite
+# 📝 TodoList App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação de gerenciamento de tarefas construída com React e TypeScript.
 
-Currently, two official plugins are available:
+## ✨ Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Adicionar novas tarefas com título e nível de dificuldade
+- Editar tarefas existentes
+- Excluir tarefas
+- Visualizar lista completa de tarefas
+- Interface responsiva e moderna
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Tailwind CSS
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🔧 Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/todolist-ts.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+cd todolist-ts
+npm install
 ```
+
+3. Execute o projeto:
+
+```bash
+npm run dev
+```
+
+## 📁 Estrutura do Projeto
+
+```
+todolist-ts/
+├── src/
+│   ├── components/
+│   │   ├── Footer/
+│   │   ├── Header/
+│   │   ├── Modal/
+│   │   ├── TaskForm/
+│   │   └── TaskList/
+│   ├── interfaces/
+│   │   └── Types.ts
+│   └── App.tsx
+```
+
+## 💻 Como Usar
+
+1. Digite o título da tarefa no campo de texto
+2. Selecione o nível de dificuldade (1-5)
+3. Clique em "Criar Tarefa"
+4. Para editar, clique no ícone de edição
+5. Para excluir, clique no ícone de lixeira
+
+## 🤝 Contribuição
+
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/AmazingFeature`)
+3. Faça o Commit das suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Faça Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
+
+## 👨‍💻 Autor
+
+Feito por [Guilherme Muniz](https://github.com/Guimunizzs)

@@ -16,6 +16,10 @@ Uma aplicação de gerenciamento de tarefas construída com React e TypeScript.
 - TypeScript
 - Tailwind CSS
 
+## 🚀 Deploy
+
+O projeto está disponível em produção através do Vercel. Você pode acessá-lo aqui: [TodoList App](https://todolist-ts-pearl.vercel.app/)
+
 ## 🔧 Instalação
 
 1. Clone o repositório:
